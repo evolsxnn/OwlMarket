@@ -69,17 +69,16 @@ const ThankYouPage = async ({
       <div>
         <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-32 xl:gap-x-24'>
           <div className='lg:col-start-2'>
-            <p className='text-sm font-medium text-blue-600'>
-              Order successful
+            <p className='text-sm font-medium text-red-600'>
+              Успешная покупка!
             </p>
             <h1 className='mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl'>
-              Thanks for ordering
+              Благодарим за заказ
             </h1>
             {order._isPaid ? (
               <p className='mt-2 text-base text-muted-foreground'>
-                Your order was processed and your assets are
-                available to download below. We&apos;ve sent
-                your receipt and order details to{' '}
+                Ваш заказ принят в обработку и скоро будет передан в доставку.
+                Мы отправили детали заказа на почту {' '}
                 {typeof order.user !== 'string' ? (
                   <span className='font-medium text-gray-900'>
                     {order.user.email}
@@ -97,7 +96,7 @@ const ThankYouPage = async ({
 
             <div className='mt-16 text-sm font-medium'>
               <div className='text-muted-foreground'>
-                Order nr.
+                Номер заказа
               </div>
               <div className='mt-2 text-gray-900'>
                 {order.id}
@@ -140,7 +139,7 @@ const ThankYouPage = async ({
                             </h3>
 
                             <p className='my-1'>
-                              Category: {label}
+                              Категория: {label}
                             </p>
                           </div>
 
@@ -148,8 +147,8 @@ const ThankYouPage = async ({
                             <a
                               href={downloadUrl}
                               download={product.name}
-                              className='text-blue-600 hover:underline underline-offset-2'>
-                              Download asset
+                              className='text-red-600 hover:underline underline-offset-2'>
+                              Скачать чек
                             </a>
                           ) : null}
                         </div>
@@ -165,23 +164,23 @@ const ThankYouPage = async ({
 
               <div className='space-y-6 border-t border-gray-200 pt-6 text-sm font-medium text-muted-foreground'>
                 <div className='flex justify-between'>
-                  <p>Subtotal</p>
+                  <p>Сумма товаров</p>
                   <p className='text-gray-900'>
                     {formatPrice(orderTotal)}
                   </p>
                 </div>
 
                 <div className='flex justify-between'>
-                  <p>Transaction Fee</p>
+                  <p>Комиссия</p>
                   <p className='text-gray-900'>
-                    {formatPrice(1)}
+                    {formatPrice(1000)}
                   </p>
                 </div>
 
                 <div className='flex items-center justify-between border-t border-gray-200 pt-6 text-gray-900'>
-                  <p className='text-base'>Total</p>
+                  <p className='text-base'>Итоговая сумма</p>
                   <p className='text-base'>
-                    {formatPrice(orderTotal + 1)}
+                    {formatPrice(orderTotal + 1000)}
                   </p>
                 </div>
               </div>
@@ -195,8 +194,8 @@ const ThankYouPage = async ({
               <div className='mt-16 border-t border-gray-200 py-6 text-right'>
                 <Link
                   href='/products'
-                  className='text-sm font-medium text-blue-600 hover:text-blue-500'>
-                  Continue shopping &rarr;
+                  className='text-sm font-medium text-red-600 hover:text-red-500'>
+                  Продолжить покупки &rarr;
                 </Link>
               </div>
             </div>

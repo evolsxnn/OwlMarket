@@ -154,7 +154,7 @@ export const ReceiptEmail = ({
                 paddingTop: 20,
               }}>
               <Text style={productTitle}>
-                Transaction Fee
+                Комиссия
               </Text>
             </Column>
 
@@ -188,8 +188,8 @@ export const ReceiptEmail = ({
             <Link href='#'>Privacy Policy </Link>
           </Text>
           <Text style={footerCopyright}>
-            Copyright © 2023 DigitalHippo Inc. <br />{' '}
-            <Link href='#'>All rights reserved</Link>
+            Copyright © 2024 OwlMarket inc. <br />{' '}
+            <Link href='#'>Все права защищены</Link>
           </Text>
         </Container>
       </Body>

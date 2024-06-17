@@ -12,7 +12,7 @@ const MobileNav = () => {
 
   const pathname = usePathname()
 
-  // whenever we click an item in the menu and navigate away, we want to close the menu
+  // когда мы нажимаем на элемент в меню и переходим в другое место, меню закрывается
   useEffect(() => {
     setIsOpen(false)
   }, [pathname])
@@ -106,7 +106,7 @@ const MobileNav = () => {
                   onClick={() => closeOnCurrent('/sign-in')}
                   href='/sign-in'
                   className='-m-2 block p-2 font-medium text-gray-900'>
-                  Sign in
+                  Войти
                 </Link>
               </div>
               <div className='flow-root'>
@@ -114,7 +114,7 @@ const MobileNav = () => {
                   onClick={() => closeOnCurrent('/sign-up')}
                   href='/sign-up'
                   className='-m-2 block p-2 font-medium text-gray-900'>
-                  Sign up
+                  Зарегистрироваться
                 </Link>
               </div>
             </div>

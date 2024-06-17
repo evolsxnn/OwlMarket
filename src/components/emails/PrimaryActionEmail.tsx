@@ -29,7 +29,7 @@ export const EmailTemplate = ({
     <Html>
       <Head />
       <Preview>
-        The marketplace for high-quality digital goods.
+        Маркетплейс с товарами высшего качества.
       </Preview>
       <Body style={main}>
         <Container style={container}>
@@ -37,14 +37,14 @@ export const EmailTemplate = ({
             src={`${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-newsletter-sign-up.png`}
             width='150'
             height='150'
-            alt='DigitalHippo'
+            alt='OwlMarket'
             style={logo}
           />
-          <Text style={paragraph}>Hi there,</Text>
+          <Text style={paragraph}>Доброго времени суток,</Text>
           <Text style={paragraph}>
-            Welcome to DigitalHippo, the marketplace for
-            high quality digital goods. Use the button below
-            to {actionLabel}.
+            Добро пожаловать на OwlMarket - маркетплейс
+            с товарами высшего качества. Используйте кнопку
+            для {actionLabel}.
           </Text>
           <Section style={btnContainer}>
             <Button style={button} href={href}>
@@ -52,14 +52,14 @@ export const EmailTemplate = ({
             </Button>
           </Section>
           <Text style={paragraph}>
-            Best,
+            С уважением,
             <br />
-            The DigitalHippo team
+            команда OwlMarket.
           </Text>
           <Hr style={hr} />
           <Text style={footer}>
-            If you did not request this email, you can
-            safely ignore it.
+            Если вы не запрашивали письмо,
+            проигнорируйте данное сообщение.
           </Text>
         </Container>
       </Body>

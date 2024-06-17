@@ -34,7 +34,7 @@ const Cart = () => {
     0
   )
 
-  const fee = 1
+  const fee = 1000
 
   return (
     <Sheet>
@@ -49,7 +49,7 @@ const Cart = () => {
       </SheetTrigger>
       <SheetContent className='flex w-full flex-col pr-0 sm:max-w-lg'>
         <SheetHeader className='space-y-2.5 pr-6'>
-          <SheetTitle>Cart ({itemCount})</SheetTitle>
+          <SheetTitle>Корзина ({itemCount})</SheetTitle>
         </SheetHeader>
         {itemCount > 0 ? (
           <>
@@ -67,17 +67,17 @@ const Cart = () => {
               <Separator />
               <div className='space-y-1.5 text-sm'>
                 <div className='flex'>
-                  <span className='flex-1'>Shipping</span>
-                  <span>Free</span>
+                  <span className='flex-1'>Доставка</span>
+                  <span>Бесплатно</span>
                 </div>
                 <div className='flex'>
                   <span className='flex-1'>
-                    Transaction Fee
+                    Комиссия за покупку
                   </span>
                   <span>{formatPrice(fee)}</span>
                 </div>
                 <div className='flex'>
-                  <span className='flex-1'>Total</span>
+                  <span className='flex-1'>Всего</span>
                   <span>
                     {formatPrice(cartTotal + fee)}
                   </span>
@@ -91,7 +91,7 @@ const Cart = () => {
                     className={buttonVariants({
                       className: 'w-full',
                     })}>
-                    Continue to Checkout
+                    Оформить заказ
                   </Link>
                 </SheetTrigger>
               </SheetFooter>
@@ -103,13 +103,13 @@ const Cart = () => {
               aria-hidden='true'
               className='relative mb-4 h-60 w-60 text-muted-foreground'>
               <Image
-                src='/hippo-empty-cart.png'
+                src='/emptycartowl.png'
                 fill
-                alt='empty shopping cart hippo'
+                alt='empty shopping cart'
               />
             </div>
             <div className='text-xl font-semibold'>
-              Your cart is empty
+              Ваша корзина пуста
             </div>
             <SheetTrigger asChild>
               <Link
@@ -120,7 +120,7 @@ const Cart = () => {
                   className:
                     'text-sm text-muted-foreground',
                 })}>
-                Add items to your cart to checkout
+                Добавьте товары в вашу корзину
               </Link>
             </SheetTrigger>
           </div>

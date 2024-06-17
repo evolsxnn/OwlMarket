@@ -100,7 +100,7 @@ export const Products: CollectionConfig = {
             await stripe.products.create({
               name: data.name,
               default_price_data: {
-                currency: 'USD',
+                currency: 'RUB',
                 unit_amount: Math.round(data.price * 100),
               },
             })
@@ -145,26 +145,26 @@ export const Products: CollectionConfig = {
     },
     {
       name: 'name',
-      label: 'Name',
+      label: 'Наименование товара',
       type: 'text',
       required: true,
     },
     {
       name: 'description',
       type: 'textarea',
-      label: 'Product details',
+      label: 'Описание товара',
     },
     {
       name: 'price',
-      label: 'Price in USD',
+      label: 'Цена в рублях',
       min: 0,
-      max: 1000,
+      max: 100000,
       type: 'number',
       required: true,
     },
     {
       name: 'category',
-      label: 'Category',
+      label: 'Категория',
       type: 'select',
       options: PRODUCT_CATEGORIES.map(
         ({ label, value }) => ({ label, value })
@@ -173,7 +173,7 @@ export const Products: CollectionConfig = {
     },
     {
       name: 'product_files',
-      label: 'Product file(s)',
+      label: 'Фотография(и) товара',
       type: 'relationship',
       required: true,
       relationTo: 'product_files',
@@ -181,7 +181,7 @@ export const Products: CollectionConfig = {
     },
     {
       name: 'approvedForSale',
-      label: 'Product Status',
+      label: 'Статус товара',
       type: 'select',
       defaultValue: 'pending',
       access: {
@@ -195,11 +195,11 @@ export const Products: CollectionConfig = {
           value: 'pending',
         },
         {
-          label: 'Approved',
+          label: 'Одобрено',
           value: 'approved',
         },
         {
-          label: 'Denied',
+          label: 'Отклонено',
           value: 'denied',
         },
       ],
@@ -231,7 +231,7 @@ export const Products: CollectionConfig = {
     {
       name: 'images',
       type: 'array',
-      label: 'Product images',
+      label: 'Фотографии товара',
       minRows: 1,
       maxRows: 4,
       required: true,

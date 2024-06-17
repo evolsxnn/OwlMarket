@@ -24,9 +24,9 @@ export default buildConfig({
     user: 'users',
     bundler: webpackBundler(),
     meta: {
-      titleSuffix: '- DigitalHippo',
-      favicon: '/favicon.ico',
-      ogImage: '/thumbnail.jpg',
+      titleSuffix: '- OwlMarket',
+      favicon: '/faviconowl.ico',
+      ogImage: '/thumbnailowl.jpg',
     },
   },
   rateLimit: {

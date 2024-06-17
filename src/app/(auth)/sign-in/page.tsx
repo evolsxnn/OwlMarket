@@ -47,7 +47,7 @@ const Page = () => {
   const { mutate: signIn, isLoading } =
     trpc.auth.signIn.useMutation({
       onSuccess: async () => {
-        toast.success('Signed in successfully')
+        toast.success('Успешная авторизация!')
 
         router.refresh()
 
@@ -65,7 +65,7 @@ const Page = () => {
       },
       onError: (err) => {
         if (err.data?.code === 'UNAUTHORIZED') {
-          toast.error('Invalid email or password.')
+          toast.error('Неправильный логин или пароль.')
         }
       },
     })
@@ -84,8 +84,8 @@ const Page = () => {
           <div className='flex flex-col items-center space-y-2 text-center'>
             <Icons.logo className='h-20 w-20' />
             <h1 className='text-2xl font-semibold tracking-tight'>
-              Sign in to your {isSeller ? 'seller' : ''}{' '}
-              account
+              Войти под вашим {isSeller ? 'seller' : ''}{' '}
+              аккаунтом
             </h1>
 
             <Link
@@ -94,7 +94,7 @@ const Page = () => {
                 className: 'gap-1.5',
               })}
               href='/sign-up'>
-              Don&apos;t have an account?
+              У вас нет аккаунта?
               <ArrowRight className='h-4 w-4' />
             </Link>
           </div>
@@ -110,7 +110,7 @@ const Page = () => {
                       'focus-visible:ring-red-500':
                         errors.email,
                     })}
-                    placeholder='you@example.com'
+                    placeholder='email@mail.ru'
                   />
                   {errors?.email && (
                     <p className='text-sm text-red-500'>
@@ -128,7 +128,7 @@ const Page = () => {
                       'focus-visible:ring-red-500':
                         errors.password,
                     })}
-                    placeholder='Password'
+                    placeholder='Пароль'
                   />
                   {errors?.password && (
                     <p className='text-sm text-red-500'>
@@ -141,7 +141,7 @@ const Page = () => {
                   {isLoading && (
                     <Loader2 className='mr-2 h-4 w-4 animate-spin' />
                   )}
-                  Sign in
+                  Войти
                 </Button>
               </div>
             </form>
@@ -154,7 +154,7 @@ const Page = () => {
               </div>
               <div className='relative flex justify-center text-xs uppercase'>
                 <span className='bg-background px-2 text-muted-foreground'>
-                  or
+                  ИЛИ
                 </span>
               </div>
             </div>
@@ -164,14 +164,14 @@ const Page = () => {
                 onClick={continueAsBuyer}
                 variant='secondary'
                 disabled={isLoading}>
-                Continue as customer
+                Продолжить как покупатель
               </Button>
             ) : (
               <Button
                 onClick={continueAsSeller}
                 variant='secondary'
                 disabled={isLoading}>
-                Continue as seller
+                Продолжить как продавец
               </Button>
             )}
           </div>

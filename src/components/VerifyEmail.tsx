@@ -21,11 +21,10 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
       <div className='flex flex-col items-center gap-2'>
         <XCircle className='h-8 w-8 text-red-600' />
         <h3 className='font-semibold text-xl'>
-          There was a problem
+          Возникла ошибка
         </h3>
         <p className='text-muted-foreground text-sm'>
-          This token is not valid or might be expired.
-          Please try again.
+          Этот токен недоступен или уже использован. Попробуйте снова.
         </p>
       </div>
     )
@@ -36,22 +35,22 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
       <div className='flex h-full flex-col items-center justify-center'>
         <div className='relative mb-4 h-60 w-60 text-muted-foreground'>
           <Image
-            src='/hippo-email-sent.png'
+            src='/emailsenthowl.png'
             fill
             alt='the email was sent'
           />
         </div>
 
         <h3 className='font-semibold text-2xl'>
-          You&apos;re all set!
+          Всё отлично!
         </h3>
         <p className='text-muted-foreground text-center mt-1'>
-          Thank you for verifying your email.
+          Спасибо за подтверждение электронной почты!
         </p>
         <Link
           className={buttonVariants({ className: 'mt-4' })}
           href='/sign-in'>
-          Sign in
+          Войти
         </Link>
       </div>
     )
@@ -62,10 +61,10 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
       <div className='flex flex-col items-center gap-2'>
         <Loader2 className='animate-spin h-8 w-8 text-zinc-300' />
         <h3 className='font-semibold text-xl'>
-          Verifying...
+          Загрузка...
         </h3>
         <p className='text-muted-foreground text-sm'>
-          This won&apos;t take long.
+          Это не займёт много времени.
         </p>
       </div>
     )

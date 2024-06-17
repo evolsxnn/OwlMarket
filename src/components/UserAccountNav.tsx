@@ -24,7 +24,7 @@ const UserAccountNav = ({ user }: { user: User }) => {
           variant='ghost'
           size='sm'
           className='relative'>
-          My account
+          Личный кабинет
         </Button>
       </DropdownMenuTrigger>
 
@@ -42,13 +42,13 @@ const UserAccountNav = ({ user }: { user: User }) => {
         <DropdownMenuSeparator />
 
         <DropdownMenuItem asChild>
-          <Link href='/sell'>Seller Dashboard</Link>
+          <Link href='/sell'>Кабинет продавца</Link>
         </DropdownMenuItem>
 
         <DropdownMenuItem
           onClick={signOut}
           className='cursor-pointer'>
-          Log out
+          Выход
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

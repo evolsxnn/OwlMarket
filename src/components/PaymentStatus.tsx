@@ -34,19 +34,19 @@ const PaymentStatus = ({
     <div className='mt-16 grid grid-cols-2 gap-x-4 text-sm text-gray-600'>
       <div>
         <p className='font-medium text-gray-900'>
-          Shipping To
+          Информация отправлена на
         </p>
         <p>{orderEmail}</p>
       </div>
 
       <div>
         <p className='font-medium text-gray-900'>
-          Order Status
+          Статус заказа
         </p>
         <p>
           {isPaid
-            ? 'Payment successful'
-            : 'Pending payment'}
+            ? 'Успешная оплата'
+            : 'Ожидается оплата'}
         </p>
       </div>
     </div>

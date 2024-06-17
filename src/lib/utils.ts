@@ -9,16 +9,16 @@ export function cn(...inputs: ClassValue[]) {
 export function formatPrice(
   price: number | string,
   options: {
-    currency?: 'USD' | 'EUR' | 'GBP' | 'BDT'
+    currency?: 'RUB' | 'EUR' | 'GBP' | 'BDT'
     notation?: Intl.NumberFormatOptions['notation']
   } = {}
 ) {
-  const { currency = 'USD', notation = 'compact' } = options
+  const { currency = 'RUB', notation = 'compact' } = options
 
   const numericPrice =
     typeof price === 'string' ? parseFloat(price) : price
 
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('ru-RU', {
     style: 'currency',
     currency,
     notation,
@@ -27,10 +27,10 @@ export function formatPrice(
 }
 
 export function constructMetadata({
-  title = 'DigitalHippo - the marketplace for digital assets',
-  description = 'DigitalHippo is an open-source marketplace for high-quality digital goods.',
-  image = '/thumbnail.png',
-  icons = '/favicon.ico',
+  title = 'OwlMarket - лучший маркетплейс с товарами высшего качества',
+  description = 'OwlMarket - доступный маркетплейс с товарами высшего качества.',
+  image = '/thumbnailowl.png',
+  icons = '/faviconowl.ico',
   noIndex = false,
 }: {
   title?: string

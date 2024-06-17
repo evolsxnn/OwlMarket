@@ -38,7 +38,7 @@ const Page = () => {
       onError: (err) => {
         if (err.data?.code === 'CONFLICT') {
           toast.error(
-            'This email is already in use. Sign in instead?'
+            'Эта электронная почта уже используется. Желаете авторизироваться?'
           )
 
           return
@@ -51,12 +51,12 @@ const Page = () => {
         }
 
         toast.error(
-          'Something went wrong. Please try again.'
+          'Что-то пошло не так. Попробуйте снова.'
         )
       },
       onSuccess: ({ sentToEmail }) => {
         toast.success(
-          `Verification email sent to ${sentToEmail}.`
+          `Письмо для подтверждения аккаунта отправлено на ${sentToEmail}.`
         )
         router.push('/verify-email?to=' + sentToEmail)
       },
@@ -76,7 +76,7 @@ const Page = () => {
           <div className='flex flex-col items-center space-y-2 text-center'>
             <Icons.logo className='h-20 w-20' />
             <h1 className='text-2xl font-semibold tracking-tight'>
-              Create an account
+              Создать аккаунт
             </h1>
 
             <Link
@@ -85,7 +85,7 @@ const Page = () => {
                 className: 'gap-1.5',
               })}
               href='/sign-in'>
-              Already have an account? Sign-in
+              Уже есть аккаунт? Авторизироваться
               <ArrowRight className='h-4 w-4' />
             </Link>
           </div>
@@ -94,14 +94,14 @@ const Page = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className='grid gap-2'>
                 <div className='grid gap-1 py-2'>
-                  <Label htmlFor='email'>Email</Label>
+                  <Label htmlFor='email'>Электронная почта</Label>
                   <Input
                     {...register('email')}
                     className={cn({
                       'focus-visible:ring-red-500':
                         errors.email,
                     })}
-                    placeholder='you@example.com'
+                    placeholder='email@mail.ru'
                   />
                   {errors?.email && (
                     <p className='text-sm text-red-500'>
@@ -111,7 +111,7 @@ const Page = () => {
                 </div>
 
                 <div className='grid gap-1 py-2'>
-                  <Label htmlFor='password'>Password</Label>
+                  <Label htmlFor='password'>Пароль</Label>
                   <Input
                     {...register('password')}
                     type='password'
@@ -119,7 +119,7 @@ const Page = () => {
                       'focus-visible:ring-red-500':
                         errors.password,
                     })}
-                    placeholder='Password'
+                    placeholder='Пароль'
                   />
                   {errors?.password && (
                     <p className='text-sm text-red-500'>
@@ -128,7 +128,7 @@ const Page = () => {
                   )}
                 </div>
 
-                <Button>Sign up</Button>
+                <Button>Регистрация</Button>
               </div>
             </form>
           </div>
